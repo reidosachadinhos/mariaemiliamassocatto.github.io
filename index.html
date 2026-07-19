@@ -1259,6 +1259,85 @@
       }
       .reveal { opacity: 1; transform: none; }
     }
+
+
+    /* ===== Refinamento editorial do portfólio ===== */
+    .timeline { margin-top: 46px; border-top: 1px solid var(--line); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 130px 1fr; gap: 28px; padding: 23px 0; border-bottom: 1px solid var(--line); }
+    .timeline-item::before { content: ""; position: absolute; left: 126px; top: 30px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 6px rgba(185,22,32,.08); }
+    .timeline-label { color: var(--red); font-size: .74rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .timeline-item strong { display: block; }
+    .timeline-item p { margin: 7px 0 0; color: var(--muted); line-height: 1.6; }
+
+    .expertise-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .expertise-card { min-height: 390px; }
+
+    .editorial-projects .project-card { min-height: 620px; background: var(--paper-2); color: var(--ink); }
+    .editorial-projects .project-card.wide { min-height: 650px; }
+    .project-editorial-inner { min-height: inherit; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(28px, 5vw, 70px); padding: clamp(30px, 5vw, 58px); }
+    .project-editorial-inner.compact-card { grid-template-columns: 1fr; align-content: start; gap: 24px; padding: 26px; }
+    .project-editorial-copy { position: relative; z-index: 3; }
+    .project-editorial-tag { display: inline-flex; align-items: center; gap: 8px; color: var(--red); font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .project-editorial-tag::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+    .project-editorial-copy h3 { margin: 16px 0 0; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(2.2rem, 4vw, 4.7rem); line-height: .92; letter-spacing: -.058em; }
+    .compact-card .project-editorial-copy h3 { font-size: clamp(2.05rem, 3vw, 3.25rem); }
+    .project-editorial-copy p { margin: 18px 0 0; color: var(--muted); line-height: 1.68; }
+    .project-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
+    .project-chips li { padding: 9px 12px; border: 1px solid rgba(19,19,19,.1); border-radius: 999px; background: rgba(255,255,255,.6); color: var(--ink-soft); font-size: .78rem; font-weight: 700; }
+    .project-editorial-visual { position: relative; min-height: 335px; display: grid; place-items: center; }
+    .cinema-visual { min-height: 500px; }
+    .visual-orbit { position: absolute; width: 110%; height: 53%; border: 2px solid rgba(185,22,32,.4); border-radius: 50%; transform: rotate(-14deg); }
+    .cinema-frame { position: relative; z-index: 2; width: min(100%, 570px); padding: 11px; border-radius: 28px; background: #111; box-shadow: 0 28px 70px rgba(0,0,0,.28); transform: rotate(1.2deg); transition: transform .45s ease; }
+    .cinema-frame img { width: 100%; max-height: 500px; object-fit: contain; border-radius: 19px; background: #f4f1eb; }
+    .phone-frame { position: relative; z-index: 2; width: min(100%, 300px); padding: 10px; border-radius: 38px; background: #111; box-shadow: 0 25px 62px rgba(0,0,0,.24); transform: rotate(-2deg); transition: transform .45s ease; }
+    .phone-frame::before { content: ""; display: block; width: 34%; height: 7px; margin: 1px auto 8px; border-radius: 999px; background: #353535; }
+    .phone-frame img { width: 100%; max-height: 360px; object-fit: contain; border-radius: 27px; background: #f4f1eb; }
+    .phone-frame-alt { transform: rotate(2deg); }
+    .design-board { position: relative; z-index: 2; width: min(100%, 470px); padding: 17px; border: 1px solid var(--line); border-radius: 26px; background: #f7f3ec; box-shadow: 0 25px 62px rgba(19,19,19,.16); transform: rotate(-1.3deg); transition: transform .45s ease; }
+    .design-board img { width: 100%; max-height: 345px; object-fit: contain; border-radius: 16px; }
+    .browser-frame { position: relative; z-index: 2; width: min(100%, 500px); border: 1px solid var(--line); border-radius: 24px; background: #fff; box-shadow: 0 25px 65px rgba(19,19,19,.17); overflow: hidden; transform: rotate(1deg); transition: transform .45s ease; }
+    .browser-bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 13px; border-bottom: 1px solid var(--line); background: #eeeae3; }
+    .browser-bar i { width: 8px; height: 8px; border-radius: 50%; background: #a8a39c; }
+    .browser-frame img { width: 100%; max-height: 345px; object-fit: contain; background: #fff; }
+    .project-card:hover .cinema-frame, .project-card:hover .phone-frame, .project-card:hover .design-board, .project-card:hover .browser-frame { transform: translateY(-7px) rotate(0); }
+    .project-dark { color: var(--paper-2) !important; border-color: rgba(255,255,255,.1) !important; background: radial-gradient(circle at 82% 18%, rgba(185,22,32,.28), transparent 26rem), #151515 !important; }
+    .project-dark .project-editorial-tag { color: #ef6068; }
+    .project-dark .project-editorial-copy p { color: rgba(255,255,255,.68); }
+    .project-dark .project-chips li { color: rgba(255,255,255,.8); border-color: rgba(255,255,255,.13); background: rgba(255,255,255,.07); }
+    .project-dark .project-open { color: #fff; border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.08); }
+    .projects-note { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 30px; padding: 23px 25px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,253,248,.55); }
+    .projects-note p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .expanded-tools { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .modal-image { object-fit: contain; background: #f4efe7; }
+
+    .cursor-glow { position: fixed; z-index: -1; width: 330px; height: 330px; border-radius: 50%; background: radial-gradient(circle, rgba(185,22,32,.08), transparent 68%); pointer-events: none; transform: translate(-50%, -50%); opacity: 0; transition: opacity .2s ease; }
+
+    @media (max-width: 1150px) {
+      .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .editorial-projects .project-card, .editorial-projects .project-card.wide { grid-column: span 12; }
+    }
+
+    @media (max-width: 980px) {
+      .project-editorial-inner { grid-template-columns: 1fr; }
+      .project-editorial-visual { order: -1; }
+      .cinema-visual { min-height: 410px; }
+    }
+
+    @media (max-width: 640px) {
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      .timeline-item::before { display: none; }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .editorial-projects .project-card, .editorial-projects .project-card.wide { min-height: 0; }
+      .project-editorial-inner, .project-editorial-inner.compact-card { min-height: 0; padding: 22px; }
+      .project-editorial-visual, .cinema-visual { min-height: 320px; }
+      .cinema-frame { width: 100%; }
+      .phone-frame { width: min(100%, 255px); }
+      .projects-note { align-items: stretch; flex-direction: column; }
+      .projects-note .button { width: 100%; }
+      .expanded-tools { grid-template-columns: 1fr 1fr; }
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -1284,6 +1363,7 @@
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
   <header class="site-header" id="topo">
     <div class="container nav-shell">
@@ -1316,15 +1396,15 @@
           </div>
 
           <h1>
-            Ideias que viram <span class="accent">conexão.</span>
+            Ideias que ganham <span class="accent">forma.</span>
           </h1>
 
           <p class="hero-subtitle">
-            Sou Maria Emília, Analista de Marketing. Uno estratégia, criatividade e comunicação para desenvolver campanhas, conteúdos e experiências que fortalecem marcas e aproximam pessoas.
+            Sou Maria Emília, analista de marketing. Trabalho com campanhas, conteúdo, redes sociais e projetos em que estratégia e criatividade precisam andar juntas.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" href="#projetos">Conhecer os projetos <span aria-hidden="true">↓</span></a>
             <a class="button button-secondary" href="https://www.linkedin.com/in/maria-em%C3%ADlia-del-alamo-massocatto-634249220/" target="_blank" rel="noopener noreferrer">Ver LinkedIn <span aria-hidden="true">↗</span></a>
           </div>
 
@@ -1345,8 +1425,8 @@
           </div>
 
           <div class="floating-label">
-            <strong>Estratégia com sensibilidade criativa.</strong>
-            <span>Do briefing à entrega final.</span>
+            <strong>Estratégia com olhar criativo.</strong>
+            <span>Do briefing até a entrega final.</span>
           </div>
         </div>
       </div>
@@ -1372,21 +1452,20 @@
             </div>
           </div>
         </aside>
-
         <div class="about-content reveal">
           <span class="eyebrow">Sobre mim</span>
-          <h2>Engenharia no olhar. <em>Marketing</em> no coração.</h2>
+          <h2>Engenharia no olhar. <em>Marketing</em> no caminho.</h2>
 
           <p class="about-lead">
-            Formada em Engenharia Agrícola pela Unicamp, encontrei no marketing o espaço onde estratégia, criatividade e comunicação se encontram.
+            Minha formação é em Engenharia Agrícola, mas foi no marketing que encontrei um trabalho que combina com o meu jeito de pensar e criar.
           </p>
 
           <div class="about-copy">
             <p>
-              Atualmente atuo no setor de máquinas para construção, participando do desenvolvimento de campanhas, gestão de redes sociais, produção de conteúdo e projetos que conectam marcas aos seus públicos.
+              Hoje atuo com campanhas, conteúdo, redes sociais e projetos de comunicação. Gosto de entender o contexto, organizar as ideias e transformar tudo isso em uma entrega clara, bonita e que faça sentido para quem está do outro lado.
             </p>
             <p>
-              Minha abordagem combina organização, repertório visual e visão de negócio para transformar desafios de comunicação em entregas claras, relevantes e bem executadas.
+              Minha experiência passa por planejamento, produção de conteúdo, audiovisual, design e gestão de projetos. Em cada trabalho, busco equilibrar repertório visual, organização e visão de negócio.
             </p>
           </div>
 
@@ -1405,7 +1484,38 @@
             </div>
             <div class="credential">
               <small>Localização</small>
-              <strong>Campinas, São Paulo, Brasil</strong>
+              <strong>Campinas, São Paulo</strong>
+            </div>
+          </div>
+
+          <div class="timeline" aria-label="Trajetória profissional">
+            <div class="timeline-item">
+              <span class="timeline-label">Formação</span>
+              <div>
+                <strong>Engenharia Agrícola na Unicamp</strong>
+                <p>Uma base que trouxe organização, pensamento analítico e visão de processo para a minha forma de trabalhar.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-label">Transição</span>
+              <div>
+                <strong>Marketing como escolha profissional</strong>
+                <p>Foi na comunicação que encontrei espaço para unir estratégia, criatividade e relacionamento com diferentes públicos.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-label">Hoje</span>
+              <div>
+                <strong>Campanhas, conteúdo e projetos</strong>
+                <p>Atuação no setor de máquinas para construção, acompanhando iniciativas de marca do planejamento à publicação.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-label">Em evolução</span>
+              <div>
+                <strong>MBA em Marketing</strong>
+                <p>Aprofundamento em posicionamento, comportamento do consumidor, comunicação e resultados.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1416,9 +1526,9 @@
       <div class="container">
         <div class="reveal">
           <span class="eyebrow">Áreas de atuação</span>
-          <h2 class="section-title">Da estratégia ao conteúdo que ganha vida.</h2>
+          <h2 class="section-title">Da ideia ao conteúdo que vai para o mundo.</h2>
           <p class="section-copy">
-            Uma atuação multidisciplinar que conecta planejamento, narrativa, design e análise para construir marcas mais consistentes.
+            Meu trabalho costuma passar por várias etapas. Gosto de participar da construção, organizar o processo e acompanhar a entrega de perto.
           </p>
         </div>
 
@@ -1427,21 +1537,28 @@
             <span class="expertise-number">01</span>
             <span class="expertise-icon" aria-hidden="true">✦</span>
             <h3>Estratégia & Campanhas</h3>
-            <p>Planejamento e execução de campanhas, branding e ações voltadas ao fortalecimento de marca e geração de resultados.</p>
+            <p>Planejamento de ações, construção de briefing, organização de cronogramas e alinhamento das entregas com os objetivos da marca.</p>
           </article>
 
           <article class="expertise-card reveal">
             <span class="expertise-number">02</span>
             <span class="expertise-icon" aria-hidden="true">◌</span>
             <h3>Conteúdo & Audiovisual</h3>
-            <p>Criação de conteúdo, roteiros, gravações, cobertura de eventos, entrevistas e storytelling para diferentes canais.</p>
+            <p>Pautas, roteiros, gravações, entrevistas, cobertura de eventos, acompanhamento de edição e conteúdo para diferentes canais.</p>
           </article>
 
           <article class="expertise-card reveal">
             <span class="expertise-number">03</span>
             <span class="expertise-icon" aria-hidden="true">↗</span>
-            <h3>Marketing Digital & Comunicação</h3>
-            <p>Gestão de redes sociais, copywriting, comunicação institucional, relacionamento e análise de desempenho.</p>
+            <h3>Marketing Digital</h3>
+            <p>Gestão de redes sociais, acompanhamento de desempenho, organização de calendário e produção de materiais estáticos e em vídeo.</p>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">04</span>
+            <span class="expertise-icon" aria-hidden="true">◇</span>
+            <h3>Design & Comunicação</h3>
+            <p>Peças para campanhas, apresentações, eventos, comunicação interna e adaptação de materiais para diferentes formatos.</p>
           </article>
         </div>
       </div>
@@ -1452,7 +1569,7 @@
         <div class="projects-head reveal">
           <div>
             <span class="eyebrow">Projetos selecionados</span>
-            <h2 class="section-title">Trabalhos que contam histórias.</h2>
+            <h2 class="section-title">Trabalhos que mostram o processo, não só o resultado.</h2>
           </div>
 
           <div class="project-filters" aria-label="Filtrar projetos">
@@ -1464,66 +1581,100 @@
           </div>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card wide reveal" data-category="video social">
-            <div class="project-media">
-              <img src="destaque-construindo-caminhos.webp" alt="Projeto Construindo Caminhos" loading="lazy" />
-            </div>
+        <div class="projects-grid editorial-projects">
+          <article class="project-card wide project-dark reveal" data-category="video social">
             <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Construindo Caminhos" data-project="construindo">↗</button>
-            <div class="project-content">
-              <span class="project-tag">Série audiovisual • CASE</span>
-              <h3>Construindo Caminhos</h3>
-              <p class="project-summary">Série criada para compartilhar histórias reais de clientes, destacando trajetórias, desafios e conquistas ao lado dos equipamentos.</p>
+            <div class="project-editorial-inner">
+              <div class="project-editorial-copy">
+                <span class="project-editorial-tag">Série audiovisual • CASE</span>
+                <h3>Construindo Caminhos</h3>
+                <p>Uma série feita para contar histórias reais de clientes. Participei do contato inicial, do briefing, das gravações em campo, das entrevistas e do acompanhamento da edição.</p>
+                <ul class="project-chips">
+                  <li>Briefing</li><li>Relacionamento</li><li>Gravação em campo</li><li>Edição</li>
+                </ul>
+              </div>
+              <div class="project-editorial-visual cinema-visual">
+                <span class="visual-orbit" aria-hidden="true"></span>
+                <div class="cinema-frame">
+                  <img src="destaque-construindo-caminhos.webp" alt="Capa do projeto Construindo Caminhos" loading="lazy" />
+                </div>
+              </div>
             </div>
           </article>
 
           <article class="project-card reveal" data-category="social design">
-            <div class="project-media">
-              <img src="projeto-redes-sociais.webp" alt="Gestão das redes sociais da Brasif Máquinas" loading="lazy" />
-            </div>
-            <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Redes Sociais Brasif" data-project="brasif">↗</button>
-            <div class="project-content">
-              <span class="project-tag">Social Media</span>
-              <h3>Redes Sociais da Brasif Máquinas</h3>
-              <p class="project-summary">Planejamento, produção de conteúdo e acompanhamento da presença digital das marcas CASE, Hyster-Yale e FPT.</p>
+            <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Redes Sociais da Brasif" data-project="brasif">↗</button>
+            <div class="project-editorial-inner compact-card">
+              <div class="project-editorial-visual">
+                <div class="phone-frame">
+                  <img src="projeto-redes-sociais.webp" alt="Projeto de gestão das redes sociais da Brasif Máquinas" loading="lazy" />
+                </div>
+              </div>
+              <div class="project-editorial-copy">
+                <span class="project-editorial-tag">Social Media</span>
+                <h3>Redes Sociais da Brasif Máquinas</h3>
+                <p>Planejamento e gestão de conteúdo para CASE, Hyster-Yale e FPT, com acompanhamento de cronograma, desempenho e produção de materiais.</p>
+                <ul class="project-chips"><li>Calendário</li><li>Métricas</li><li>Vídeo</li><li>Design</li></ul>
+              </div>
             </div>
           </article>
 
-          <article class="project-card reveal" data-category="video">
-            <div class="project-media">
-              <img src="projeto-audiovisual.webp" alt="Projeto de gravação e edição de vídeos" loading="lazy" />
-            </div>
+          <article class="project-card reveal" data-category="video social">
             <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Audiovisual" data-project="audiovisual">↗</button>
-            <div class="project-content">
-              <span class="project-tag">Audiovisual</span>
-              <h3>Gravação & Edição de Vídeos</h3>
-              <p class="project-summary">Pautas, roteiros, gravações internas e externas, direção de entrevistas, captação e edição para redes sociais.</p>
+            <div class="project-editorial-inner compact-card">
+              <div class="project-editorial-visual">
+                <div class="phone-frame phone-frame-alt">
+                  <img src="projeto-audiovisual.webp" alt="Projeto de gravação e edição de vídeos" loading="lazy" />
+                </div>
+              </div>
+              <div class="project-editorial-copy">
+                <span class="project-editorial-tag">Audiovisual</span>
+                <h3>Gravação & Edição de Vídeos</h3>
+                <p>Participação no processo completo: pauta, roteiro, gravações, direção de entrevistas, captação e acompanhamento da edição.</p>
+                <ul class="project-chips"><li>Roteiro</li><li>Entrevistas</li><li>Captação</li><li>Edição</li></ul>
+              </div>
             </div>
           </article>
 
           <article class="project-card reveal" data-category="design social">
-            <div class="project-media">
-              <img src="projeto-design.webp" alt="Projetos de design e comunicação" loading="lazy" />
-            </div>
             <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Design" data-project="design">↗</button>
-            <div class="project-content">
-              <span class="project-tag">Design & Comunicação</span>
-              <h3>Campanhas e Peças Visuais</h3>
-              <p class="project-summary">Artes para redes sociais, apresentações institucionais, materiais para eventos e identidades visuais.</p>
+            <div class="project-editorial-inner compact-card">
+              <div class="project-editorial-visual">
+                <div class="design-board">
+                  <img src="projeto-design.webp" alt="Seleção de peças de design e comunicação" loading="lazy" />
+                </div>
+              </div>
+              <div class="project-editorial-copy">
+                <span class="project-editorial-tag">Design & Comunicação</span>
+                <h3>Peças para campanhas e conteúdo</h3>
+                <p>Criação e adaptação de materiais para redes sociais, campanhas digitais, apresentações, eventos e comunicação interna.</p>
+                <ul class="project-chips"><li>Social</li><li>Apresentações</li><li>Eventos</li><li>Identidade</li></ul>
+              </div>
             </div>
           </article>
 
-          <article class="project-card reveal" data-category="web">
-            <div class="project-media">
-              <img src="projeto-website-phibro.webp" alt="Projeto do website Phibro LATAM" loading="lazy" />
-            </div>
+          <article class="project-card reveal" data-category="web design">
             <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Website Phibro" data-project="phibro">↗</button>
-            <div class="project-content">
-              <span class="project-tag">Website • Gestão de projeto</span>
-              <h3>Website Phibro LATAM</h3>
-              <p class="project-summary">Gestão do projeto com a agência, estruturação do conteúdo, alinhamento técnico e revisão antes da publicação.</p>
+            <div class="project-editorial-inner compact-card">
+              <div class="project-editorial-visual">
+                <div class="browser-frame">
+                  <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                  <img src="projeto-website-phibro.webp" alt="Website integrado da Phibro para a América Latina" loading="lazy" />
+                </div>
+              </div>
+              <div class="project-editorial-copy">
+                <span class="project-editorial-tag">Website • LATAM</span>
+                <h3>Website integrado da Phibro</h3>
+                <p>Gestão do projeto com a agência, organização da estrutura, revisão de conteúdo e alinhamento entre equipes até a publicação.</p>
+                <ul class="project-chips"><li>Estrutura</li><li>Conteúdo</li><li>Alinhamento</li><li>Gestão</li></ul>
+              </div>
             </div>
           </article>
+        </div>
+
+        <div class="projects-note reveal">
+          <p>Esta é uma seleção dos projetos principais. O PDF reúne mais contexto sobre a atuação e as entregas de cada trabalho.</p>
+          <a class="button button-secondary" href="portfolio-maria-emilia.pdf" target="_blank" rel="noopener noreferrer">Abrir portfólio em PDF <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -1532,35 +1683,15 @@
       <div class="container process-shell reveal">
         <div class="process-grid">
           <div>
-            <span class="eyebrow">Como trabalho</span>
-            <h2>Clareza no processo. <em>Consistência</em> na entrega.</h2>
+            <span class="eyebrow">Como eu trabalho</span>
+            <h2>Um processo claro, com espaço para <em>criar.</em></h2>
           </div>
 
           <div class="process-list">
-            <article class="process-item">
-              <div>
-                <h3>Imersão e entendimento</h3>
-                <p>Contexto, público, objetivo, canais, referências e indicadores que orientam o projeto.</p>
-              </div>
-            </article>
-            <article class="process-item">
-              <div>
-                <h3>Estratégia e planejamento</h3>
-                <p>Definição da narrativa, cronograma, formatos, responsabilidades e pontos de validação.</p>
-              </div>
-            </article>
-            <article class="process-item">
-              <div>
-                <h3>Criação e produção</h3>
-                <p>Desenvolvimento de conteúdo, materiais visuais, roteiros, gravações e alinhamentos.</p>
-              </div>
-            </article>
-            <article class="process-item">
-              <div>
-                <h3>Análise e evolução</h3>
-                <p>Acompanhamento de desempenho, aprendizados e ajustes para elevar a qualidade das próximas entregas.</p>
-              </div>
-            </article>
+            <article class="process-item"><div><h3>Entender o contexto</h3><p>Antes de criar, procuro entender o objetivo, o público, os limites do projeto e o que realmente precisa ser resolvido.</p></div></article>
+            <article class="process-item"><div><h3>Organizar as ideias</h3><p>Estruturo o briefing, separo referências, alinho responsabilidades e transformo o pedido em um caminho de trabalho mais claro.</p></div></article>
+            <article class="process-item"><div><h3>Construir e acompanhar</h3><p>Participo da produção, acompanho fornecedores e equipes, reviso materiais e mantenho o projeto andando até a entrega.</p></div></article>
+            <article class="process-item"><div><h3>Revisar e aprender</h3><p>Depois da publicação, olho para o resultado, os aprendizados e os pontos que podem deixar o próximo projeto ainda melhor.</p></div></article>
           </div>
         </div>
       </div>
@@ -1569,38 +1700,31 @@
     <section class="tools" id="ferramentas">
       <div class="container">
         <div class="reveal">
-          <span class="eyebrow">Ferramentas</span>
-          <h2 class="section-title">Criação com repertório e domínio técnico.</h2>
+          <span class="eyebrow">Ferramentas e habilidades</span>
+          <h2 class="section-title">O que faz parte do meu dia a dia.</h2>
+          <p class="section-copy">Algumas ferramentas entram na criação. Outras ajudam a organizar, acompanhar e dar consistência ao trabalho.</p>
         </div>
 
-        <div class="tools-grid">
-          <article class="tool-card reveal">
-            <span class="tool-icon">Ps</span>
-            <div><strong>Adobe Photoshop</strong><br /><span>Tratamento e composição visual</span></div>
-          </article>
-          <article class="tool-card reveal">
-            <span class="tool-icon">Ai</span>
-            <div><strong>Adobe Illustrator</strong><br /><span>Vetores e identidade visual</span></div>
-          </article>
-          <article class="tool-card reveal">
-            <span class="tool-icon">Pr</span>
-            <div><strong>Adobe Premiere</strong><br /><span>Edição de vídeo e narrativa</span></div>
-          </article>
-          <article class="tool-card reveal">
-            <span class="tool-icon">Cv</span>
-            <div><strong>Canva</strong><br /><span>Conteúdo ágil e multiplataforma</span></div>
-          </article>
+        <div class="tools-grid expanded-tools">
+          <article class="tool-card reveal"><span class="tool-icon">Ps</span><div><strong>Photoshop</strong><br /><span>Tratamento e criação de peças</span></div></article>
+          <article class="tool-card reveal"><span class="tool-icon">Ai</span><div><strong>Illustrator</strong><br /><span>Vetores e identidade visual</span></div></article>
+          <article class="tool-card reveal"><span class="tool-icon">Pr</span><div><strong>Premiere</strong><br /><span>Edição de vídeos</span></div></article>
+          <article class="tool-card reveal"><span class="tool-icon">Ca</span><div><strong>Canva</strong><br /><span>Criação e adaptação de materiais</span></div></article>
+          <article class="tool-card reveal"><span class="tool-icon">PL</span><div><strong>Planejamento</strong><br /><span>Pautas, calendários e cronogramas</span></div></article>
+          <article class="tool-card reveal"><span class="tool-icon">CO</span><div><strong>Copywriting</strong><br /><span>Textos para campanhas e conteúdo</span></div></article>
+          <article class="tool-card reveal"><span class="tool-icon">AN</span><div><strong>Análise</strong><br /><span>Desempenho e aprendizados</span></div></article>
+          <article class="tool-card reveal"><span class="tool-icon">GP</span><div><strong>Gestão de projetos</strong><br /><span>Alinhamentos, revisão e acompanhamento</span></div></article>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contato">
       <div class="container contact-shell reveal">
-        <h2>Vamos criar algo <em>relevante</em> juntos?</h2>
-        <p class="contact-copy">Estou aberta a conversas sobre marketing, conteúdo, comunicação, projetos criativos e novas oportunidades profissionais.</p>
+        <h2>Vamos trabalhar <em>juntos?</em></h2>
+        <p class="contact-copy">Gosto de projetos que pedem organização, repertório e vontade de construir algo bem feito. Se fizer sentido para você, vamos conversar.</p>
 
         <div class="contact-actions">
-          <a class="button button-primary" href="mailto:mariaemiliaa.massocatto@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="mailto:mariaemiliaa.massocatto@gmail.com">Enviar um e-mail <span aria-hidden="true">↗</span></a>
           <a class="button button-secondary" href="portfolio-maria-emilia.pdf" target="_blank" rel="noopener noreferrer">Abrir portfólio em PDF <span aria-hidden="true">↗</span></a>
         </div>
 
@@ -1630,7 +1754,7 @@
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <article class="modal-dialog">
       <button class="modal-close" type="button" aria-label="Fechar detalhes">✕</button>
-      <img class="modal-image" src="" alt="" />
+      <img class="modal-image" src="projeto-construindo-caminhos.webp" alt="Detalhes do projeto Construindo Caminhos" />
       <div class="modal-body">
         <span class="eyebrow modal-category"></span>
         <h3 id="modal-title"></h3>
@@ -1717,71 +1841,36 @@
         category: 'Série audiovisual • CASE',
         title: 'Construindo Caminhos',
         image: 'projeto-construindo-caminhos.webp',
-        description: 'Um dos principais projetos de vídeo do portfólio. A série compartilha histórias reais de clientes CASE, valorizando suas trajetórias, desafios e conquistas ao lado dos equipamentos.',
-        items: [
-          'Contato e relacionamento com clientes participantes',
-          'Elaboração de briefing e planejamento das gravações',
-          'Alinhamento com equipe interna e audiovisual',
-          'Acompanhamento das gravações em campo',
-          'Condução das entrevistas',
-          'Acompanhamento da edição e publicação'
-        ]
+        description: 'O Construindo Caminhos nasceu para contar histórias reais de clientes CASE. Minha participação passou pelo contato com os participantes, construção do briefing, alinhamento da gravação, acompanhamento em campo, condução das entrevistas e revisão do conteúdo final.',
+        items: ['Contato com clientes', 'Elaboração de briefing', 'Planejamento das gravações', 'Alinhamento com a equipe audiovisual', 'Acompanhamento em campo', 'Condução de entrevistas', 'Revisão da edição', 'Acompanhamento da publicação']
       },
       brasif: {
         category: 'Social Media',
-        title: 'Gestão das Redes Sociais da Brasif Máquinas',
+        title: 'Redes Sociais da Brasif Máquinas',
         image: 'projeto-redes-sociais.webp',
-        description: 'Planejamento e gestão dos conteúdos das redes sociais das marcas CASE, Hyster-Yale e FPT, com foco em estratégia, relacionamento e fortalecimento da presença digital.',
-        items: [
-          'Planejamento de cronograma editorial',
-          'Acompanhamento de métricas',
-          'Desenvolvimento de materiais estáticos',
-          'Produção e adaptação de vídeos',
-          'Apoio à comunicação das marcas representadas',
-          'Evolução contínua da presença digital'
-        ]
+        description: 'Nesse projeto, atuei no planejamento e na gestão de conteúdo para as redes sociais da Brasif Máquinas, acompanhando a presença digital das marcas CASE, Hyster-Yale e FPT. O trabalho envolveu organização de pauta, leitura de desempenho e desenvolvimento de materiais em diferentes formatos.',
+        items: ['Planejamento de calendário', 'Organização de pautas', 'Acompanhamento de métricas', 'Peças estáticas', 'Conteúdo em vídeo', 'Adaptação para diferentes canais']
       },
       audiovisual: {
-        category: 'Conteúdo audiovisual',
+        category: 'Audiovisual',
         title: 'Gravação e Edição de Vídeos',
         image: 'projeto-audiovisual.webp',
-        description: 'Planejamento, acompanhamento de gravações e produção de vídeos para Instagram, TikTok e YouTube, conectando conteúdo técnico a narrativas mais humanas e acessíveis.',
-        items: [
-          'Planejamento de pautas e roteiros',
-          'Organização de gravações internas e externas',
-          'Direção de entrevistas',
-          'Captação de conteúdos',
-          'Edição para redes sociais',
-          'Adaptação para múltiplos formatos'
-        ]
+        description: 'Também participei da produção de vídeos do começo ao fim: da construção das pautas e roteiros até o acompanhamento das gravações e da edição do material final para redes sociais.',
+        items: ['Planejamento de pautas', 'Construção de roteiros', 'Organização de gravações', 'Direção de entrevistas', 'Captação de conteúdos', 'Edição para redes sociais', 'Instagram, TikTok e YouTube']
       },
       design: {
         category: 'Design & Comunicação',
-        title: 'Campanhas e Peças Visuais',
+        title: 'Peças para campanhas e conteúdo',
         image: 'projeto-design.webp',
-        description: 'Desenvolvimento de peças para campanhas digitais e institucionais, conectando identidade visual, mensagem e adequação aos diferentes canais.',
-        items: [
-          'Artes para redes sociais',
-          'Apresentações institucionais',
-          'Materiais para eventos',
-          'Comunicação interna',
-          'Adaptação para diferentes formatos',
-          'Identidade visual de projetos e séries'
-        ]
+        description: 'Além do planejamento e da produção de conteúdo, desenvolvi materiais para campanhas digitais e institucionais. Isso inclui peças para redes sociais, apresentações, eventos, comunicação interna e identidades visuais de projetos.',
+        items: ['Artes para redes sociais', 'Apresentações institucionais', 'Materiais para eventos', 'Comunicação interna', 'Adaptação de formatos', 'Identidade visual de projetos']
       },
       phibro: {
-        category: 'Website • Gestão de projeto',
-        title: 'Website Integrado Phibro LATAM',
+        category: 'Website • LATAM',
+        title: 'Website integrado da Phibro',
         image: 'projeto-website-phibro.webp',
-        description: 'Gestão do desenvolvimento do website da Phibro para países da América Latina, garantindo alinhamento entre conteúdo, estrutura, comunicação e experiência do usuário.',
-        items: [
-          'Liderança do projeto com a agência',
-          'Planejamento da estrutura do site',
-          'Desenvolvimento e revisão de conteúdos',
-          'Alinhamento técnico entre equipes',
-          'Acompanhamento do desenvolvimento',
-          'Revisão final antes da publicação'
-        ]
+        description: 'No projeto do website da Phibro para a América Latina, acompanhei o desenvolvimento em conjunto com a agência, ajudando na estruturação das páginas, na revisão dos conteúdos e no alinhamento entre áreas para garantir uma entrega mais consistente.',
+        items: ['Gestão do projeto com a agência', 'Organização da estrutura', 'Revisão dos conteúdos', 'Alinhamento com equipes técnicas', 'Acompanhamento do desenvolvimento', 'Revisão antes da publicação']
       }
     };
 
@@ -1850,6 +1939,28 @@
         });
       });
     }
+
+    // Luz suave que acompanha o cursor e reforça a identidade visual.
+    const cursorGlow = document.querySelector('.cursor-glow');
+    if (window.matchMedia('(hover: hover)').matches && cursorGlow) {
+      document.addEventListener('pointermove', event => {
+        cursorGlow.style.opacity = '1';
+        cursorGlow.style.left = `${event.clientX}px`;
+        cursorGlow.style.top = `${event.clientY}px`;
+      });
+      document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
+    }
+
+    // Mostra uma mensagem útil caso algum nome de imagem seja alterado no GitHub.
+    document.querySelectorAll('img').forEach(image => {
+      image.addEventListener('error', () => {
+        if (!image.src) return;
+        image.alt = 'Imagem não encontrada. Confira o nome do arquivo no GitHub.';
+        image.style.objectFit = 'contain';
+        image.style.background = '#eee7de';
+      });
+    });
+
   </script>
 </body>
 </html>
