@@ -1028,7 +1028,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr) minmax(0, 1fr);
       gap: 12px;
       margin-top: 58px;
     }
@@ -1045,7 +1045,20 @@
 
     .contact-link:hover { transform: translateY(-4px); background: var(--paper); }
     .contact-link small { display: block; color: var(--red); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
-    .contact-link strong { display: block; margin-top: 8px; overflow-wrap: anywhere; }
+    .contact-link strong {
+      display: block;
+      margin-top: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link.email-card strong {
+      font-size: clamp(.82rem, 1.12vw, 1.05rem);
+      line-height: 1.25;
+      letter-spacing: -.025em;
+      white-space: nowrap;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
 
     .site-footer {
       display: flex;
@@ -1215,6 +1228,10 @@
       .project-card.wide { grid-column: span 12; min-height: 540px; }
       .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .contact-list { grid-template-columns: 1fr; }
+
+      .contact-link.email-card strong {
+        font-size: clamp(.76rem, 3.25vw, .98rem);
+      }
     }
 
     @media (max-width: 640px) {
@@ -1729,7 +1746,7 @@
         </div>
 
         <div class="contact-list">
-          <a class="contact-link" href="mailto:mariaemiliaa.massocatto@gmail.com">
+          <a class="contact-link email-card" href="mailto:mariaemiliaa.massocatto@gmail.com">
             <small>E-mail</small>
             <strong>mariaemiliaa.massocatto@gmail.com</strong>
           </a>
