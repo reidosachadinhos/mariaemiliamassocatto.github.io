@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#b91620" />
+  <meta name="description" content="Portfólio de Maria Emília Del'Alamo Massocatto — marketing, conteúdo, comunicação, social media, branding e projetos audiovisuais." />
+  <meta name="author" content="Maria Emília Del'Alamo Massocatto" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Maria Emília Massocatto | Portfólio de Marketing" />
+  <meta property="og:description" content="Estratégia, criatividade e comunicação para fortalecer marcas e aproximá-las das pessoas." />
+  <meta property="og:image" content="assets/img/og-capa.webp" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Maria Emília Massocatto | Marketing, Conteúdo e Comunicação</title>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #131313;
+      --ink-soft: #343434;
+      --paper: #f5f1e9;
+      --paper-2: #fffdf8;
+      --red: #b91620;
+      --red-dark: #7d0d13;
+      --line: rgba(19, 19, 19, .14);
+      --muted: #6e6a64;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(34, 24, 18, .13);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --container: 1180px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(185, 22, 32, .09), transparent 25rem),
+        radial-gradient(circle at 92% 18%, rgba(19, 19, 19, .055), transparent 24rem),
+        var(--paper);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: .024;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    ::selection { background: var(--red); color: var(--white); }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1200;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--red), #ef535b);
+      box-shadow: 0 0 18px rgba(185, 22, 32, .45);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--red);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-title {
+      margin: 16px 0 0;
+      max-width: 820px;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(2.6rem, 6vw, 5.9rem);
+      line-height: .92;
+      letter-spacing: -.055em;
+    }
+
+    .section-copy {
+      max-width: 680px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.7;
+    }
+
+    /* Navegação */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: padding .25s ease, background .25s ease, box-shadow .25s ease;
+    }
+
+    .site-header.scrolled {
+      padding: 9px 0;
+      background: rgba(245, 241, 233, .88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 var(--line);
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 58px;
+      padding: 8px 10px 8px 14px;
+      border: 1px solid rgba(19, 19, 19, .11);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, .72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 14px 35px rgba(19, 19, 19, .06);
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper-2);
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      box-shadow: 0 8px 24px rgba(19, 19, 19, .19);
+    }
+
+    .brand-name {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800;
+      letter-spacing: -.025em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      color: var(--ink-soft);
+      font-size: .91rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color .2s ease, background .2s ease, transform .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--red);
+      background: rgba(185, 22, 32, .08);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 6px;
+      padding: 12px 18px !important;
+      background: var(--ink) !important;
+      color: var(--white) !important;
+      box-shadow: 0 8px 18px rgba(19, 19, 19, .16);
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .menu-button span,
+    .menu-button::before,
+    .menu-button::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 4px auto;
+      background: currentColor;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .menu-button.open span { opacity: 0; }
+    .menu-button.open::before { transform: translateY(6px) rotate(45deg); }
+    .menu-button.open::after { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      padding: 140px 0 76px;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "PORTFÓLIO";
+      position: absolute;
+      right: -1.5vw;
+      bottom: 1vh;
+      z-index: -2;
+      color: rgba(19, 19, 19, .032);
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(5rem, 16vw, 15rem);
+      font-weight: 800;
+      letter-spacing: -.07em;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+      align-items: center;
+      gap: clamp(48px, 7vw, 110px);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid rgba(19, 19, 19, .12);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, .72);
+      color: var(--ink-soft);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px rgba(19, 19, 19, .05);
+    }
+
+    .hero-kicker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 5px rgba(185, 22, 32, .1);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      margin: 24px 0 0;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(4.1rem, 9.5vw, 8.5rem);
+      line-height: .82;
+      letter-spacing: -.075em;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .hero h1 .accent {
+      display: inline-block;
+      color: var(--red);
+      font-family: "Playfair Display", serif;
+      font-size: .86em;
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: -.06em;
+      transform: rotate(-1.5deg);
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      margin: 28px 0 0;
+      color: var(--ink-soft);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.6;
+      text-wrap: balance;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button:hover { transform: translateY(-3px); }
+
+    .button-primary {
+      background: var(--red);
+      color: var(--white);
+      box-shadow: 0 14px 28px rgba(185, 22, 32, .22);
+    }
+
+    .button-primary:hover {
+      background: var(--red-dark);
+      box-shadow: 0 18px 36px rgba(125, 13, 19, .25);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: rgba(255, 253, 248, .62);
+      color: var(--ink);
+    }
+
+    .button-secondary:hover {
+      background: var(--paper-2);
+      box-shadow: 0 12px 28px rgba(19, 19, 19, .08);
+    }
+
+    .hero-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 28px;
+    }
+
+    .fact-chip {
+      padding: 9px 13px;
+      border: 1px solid rgba(19, 19, 19, .1);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 253, 248, .56);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 580px;
+      display: grid;
+      place-items: center;
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: min(100%, 450px);
+      aspect-ratio: .82;
+      padding: 14px;
+      border-radius: 48% 48% 28px 28px;
+      background: rgba(255, 253, 248, .62);
+      border: 1px solid rgba(255, 255, 255, .84);
+      box-shadow: var(--shadow);
+      transform: rotate(1.3deg);
+      overflow: hidden;
+    }
+
+    .portrait-frame::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255, 255, 255, .54);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 48% 48% 20px 20px;
+      filter: saturate(.96) contrast(1.02);
+    }
+
+    .orbit {
+      position: absolute;
+      width: 120%;
+      height: 54%;
+      border: 3px solid var(--red);
+      border-radius: 50%;
+      transform: rotate(-15deg);
+      opacity: .9;
+      pointer-events: none;
+      animation: orbitFloat 7s ease-in-out infinite;
+    }
+
+    .orbit::after {
+      content: "✦";
+      position: absolute;
+      top: 2%;
+      right: 9%;
+      color: var(--red);
+      font-size: 2.4rem;
+      background: var(--paper);
+      padding: 0 10px;
+    }
+
+    .floating-label {
+      position: absolute;
+      left: -18px;
+      bottom: 54px;
+      max-width: 210px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: 0 18px 40px rgba(19, 19, 19, .2);
+      transform: rotate(-3deg);
+    }
+
+    .floating-label strong {
+      display: block;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.18rem;
+      line-height: 1.05;
+    }
+
+    .floating-label span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, .64);
+      font-size: .78rem;
+    }
+
+    .spark {
+      position: absolute;
+      color: var(--ink);
+      font-size: 2rem;
+      animation: spinSoft 12s linear infinite;
+    }
+
+    .spark-one { top: 3%; right: 3%; }
+    .spark-two { bottom: 4%; right: 12%; font-size: 1.4rem; animation-direction: reverse; }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+    }
+
+    .scroll-cue::after {
+      content: "";
+      width: 1px;
+      height: 34px;
+      background: var(--red);
+      animation: scrollLine 1.7s ease-in-out infinite;
+    }
+
+    /* Faixa */
+    .marquee {
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      background: var(--ink);
+      color: var(--paper-2);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      padding: 14px 0;
+      animation: marquee 24s linear infinite;
+    }
+
+    .marquee-track span {
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      padding-right: 22px;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .marquee-track span::after { content: "✦"; color: #ef535b; }
+
+    /* Sobre */
+    .about { padding: 120px 0; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: clamp(46px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .about-sticky { position: sticky; top: 120px; }
+
+    .about-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper-2);
+      box-shadow: 0 20px 65px rgba(19, 19, 19, .08);
+    }
+
+    .about-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+
+    .about-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 18px;
+    }
+
+    .about-card-meta strong {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .about-card-meta span {
+      color: var(--red);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .about-content h2 {
+      margin: 0;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(3rem, 6vw, 6.4rem);
+      line-height: .91;
+      letter-spacing: -.06em;
+    }
+
+    .about-content h2 em {
+      color: var(--red);
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+
+    .about-lead {
+      margin: 30px 0 0;
+      color: var(--ink-soft);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.58;
+    }
+
+    .about-copy {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .about-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .credential {
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 253, 248, .48);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .credential:hover { transform: translateY(-4px); background: var(--paper-2); }
+    .credential small { display: block; color: var(--red); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .credential strong { display: block; margin-top: 8px; font-size: 1rem; line-height: 1.3; }
+
+    /* Expertise */
+    .expertise {
+      padding: 120px 0;
+      background: var(--ink);
+      color: var(--paper-2);
+      overflow: hidden;
+    }
+
+    .expertise .eyebrow { color: #ef535b; }
+    .expertise .section-copy { color: rgba(255, 255, 255, .62); }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 58px;
+    }
+
+    .expertise-card {
+      position: relative;
+      min-height: 360px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 28px;
+      background: linear-gradient(150deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(239, 83, 91, .6);
+      background: linear-gradient(150deg, rgba(185,22,32,.2), rgba(255,255,255,.025));
+    }
+
+    .expertise-number {
+      color: rgba(255, 255, 255, .35);
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .expertise-card h3 {
+      margin: 82px 0 0;
+      max-width: 280px;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+    }
+
+    .expertise-card p {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .62);
+      line-height: 1.58;
+    }
+
+    .expertise-icon {
+      position: absolute;
+      right: 22px;
+      top: 20px;
+      color: #ef535b;
+      font-size: 2rem;
+      transform: rotate(10deg);
+    }
+
+    /* Projetos */
+    .projects { padding: 125px 0; }
+
+    .projects-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .filter-button {
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .filter-button:hover,
+    .filter-button.active {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 54px;
+    }
+
+    .project-card {
+      grid-column: span 6;
+      position: relative;
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper-2);
+      overflow: hidden;
+      box-shadow: 0 18px 55px rgba(19, 19, 19, .08);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .project-card.wide { grid-column: span 12; min-height: 620px; }
+    .project-card.hidden { display: none; }
+
+    .project-media {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .project-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 10, 10, .88) 0%, rgba(10,10,10,.12) 58%, rgba(10,10,10,0) 100%);
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s cubic-bezier(.2,.75,.2,1), filter .4s ease;
+    }
+
+    .project-card:hover .project-media img {
+      transform: scale(1.045);
+      filter: saturate(1.05) contrast(1.03);
+    }
+
+    .project-content {
+      position: absolute;
+      inset: auto 0 0;
+      z-index: 2;
+      padding: 30px;
+      color: var(--white);
+    }
+
+    .project-tag {
+      display: inline-flex;
+      padding: 7px 11px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      background: rgba(19,19,19,.32);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      max-width: 680px;
+      margin: 14px 0 0;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(2rem, 4vw, 4.4rem);
+      line-height: .94;
+      letter-spacing: -.05em;
+    }
+
+    .project-card:not(.wide) h3 { font-size: clamp(2rem, 3.3vw, 3.3rem); }
+
+    .project-summary {
+      max-width: 620px;
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.75);
+      line-height: 1.56;
+    }
+
+    .project-open {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      background: rgba(19,19,19,.25);
+      color: var(--white);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .project-open:hover { transform: rotate(8deg) scale(1.07); background: var(--red); }
+
+    /* Processo / números */
+    .process { padding: 0 0 125px; }
+
+    .process-shell {
+      padding: clamp(34px, 6vw, 72px);
+      border-radius: 40px;
+      background: var(--red);
+      color: var(--white);
+      box-shadow: 0 28px 80px rgba(125, 13, 19, .22);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: clamp(40px, 8vw, 100px);
+      align-items: start;
+    }
+
+    .process-shell .eyebrow { color: rgba(255,255,255,.78); }
+    .process-shell h2 {
+      margin: 18px 0 0;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: .92;
+      letter-spacing: -.06em;
+    }
+
+    .process-shell h2 em {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+
+    .process-list { counter-reset: steps; }
+
+    .process-item {
+      counter-increment: steps;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+
+    .process-item::before {
+      content: counter(steps, decimal-leading-zero);
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,.42);
+      border-radius: 50%;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .process-item h3 { margin: 1px 0 0; font-size: 1.2rem; }
+    .process-item p { margin: 8px 0 0; color: rgba(255,255,255,.72); line-height: 1.55; }
+
+    /* Ferramentas */
+    .tools { padding: 0 0 125px; }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .tool-card {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 253, 248, .65);
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-6px);
+      background: var(--paper-2);
+      box-shadow: 0 16px 42px rgba(19, 19, 19, .08);
+    }
+
+    .tool-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 17px;
+      background: var(--ink);
+      color: var(--white);
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .tool-card:nth-child(2) .tool-icon,
+    .tool-card:nth-child(4) .tool-icon { background: var(--red); }
+
+    .tool-card strong { font-size: 1rem; }
+    .tool-card span { color: var(--muted); font-size: .84rem; }
+
+    /* Contato */
+    .contact { padding: 0 0 30px; }
+
+    .contact-shell {
+      position: relative;
+      padding: clamp(36px, 8vw, 96px);
+      border-radius: 42px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-shell::before {
+      content: "✦";
+      position: absolute;
+      right: 6%;
+      top: 10%;
+      color: var(--red);
+      font-size: clamp(3rem, 7vw, 7rem);
+      animation: spinSoft 15s linear infinite;
+    }
+
+    .contact-shell::after {
+      content: "";
+      position: absolute;
+      right: -8%;
+      bottom: -42%;
+      width: 500px;
+      height: 500px;
+      border: 3px solid var(--red);
+      border-radius: 50%;
+      transform: rotate(-20deg) scaleY(.45);
+      pointer-events: none;
+    }
+
+    .contact-shell h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(3.5rem, 8vw, 8.5rem);
+      line-height: .84;
+      letter-spacing: -.07em;
+    }
+
+    .contact-shell h2 em {
+      color: var(--red);
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+
+    .contact-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .contact-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .contact-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 58px;
+    }
+
+    .contact-link {
+      display: block;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      text-decoration: none;
+      background: rgba(245, 241, 233, .55);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .contact-link:hover { transform: translateY(-4px); background: var(--paper); }
+    .contact-link small { display: block; color: var(--red); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-link strong { display: block; margin-top: 8px; overflow-wrap: anywhere; }
+
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 26px 0 34px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .back-to-top {
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    /* Modal de projetos */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1500;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(10, 10, 10, .72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .modal.open { display: grid; }
+
+    .modal-dialog {
+      position: relative;
+      width: min(100%, 980px);
+      max-height: min(88svh, 840px);
+      overflow: auto;
+      border-radius: 32px;
+      background: var(--paper-2);
+      box-shadow: 0 30px 100px rgba(0,0,0,.35);
+      animation: modalIn .28s ease both;
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 440px;
+      object-fit: cover;
+    }
+
+    .modal-body { padding: clamp(26px, 5vw, 54px); }
+
+    .modal-body h3 {
+      margin: 12px 0 0;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: .9;
+      letter-spacing: -.06em;
+    }
+
+    .modal-body p { color: var(--muted); line-height: 1.7; }
+
+    .modal-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 26px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .modal-list li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper);
+      font-weight: 700;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      background: rgba(19,19,19,.72);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    /* Revelação no scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2,.75,.2,1);
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 5px rgba(185, 22, 32, .1); }
+      50% { transform: scale(.7); box-shadow: 0 0 0 9px rgba(185, 22, 32, .04); }
+    }
+
+    @keyframes orbitFloat {
+      0%, 100% { transform: rotate(-15deg) translateY(0); }
+      50% { transform: rotate(-12deg) translateY(-10px); }
+    }
+
+    @keyframes spinSoft { to { transform: rotate(360deg); } }
+
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(.4); transform-origin: top; opacity: .4; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(18px) scale(.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 980px) {
+      .menu-button { display: block; }
+
+      .nav-links {
+        position: absolute;
+        top: 82px;
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255, 253, 248, .96);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 15px; }
+      .nav-cta { margin: 4px 0 0; }
+
+      .hero-grid,
+      .about-grid,
+      .process-grid { grid-template-columns: 1fr; }
+
+      .hero { padding-top: 124px; }
+      .hero-visual { min-height: 520px; }
+      .portrait-frame { width: min(88vw, 440px); }
+      .about-sticky { position: static; }
+      .about-card { max-width: 540px; }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .expertise-card { min-height: 280px; }
+      .expertise-card h3 { margin-top: 55px; }
+      .projects-head { align-items: flex-start; flex-direction: column; }
+      .project-filters { justify-content: flex-start; }
+      .project-card,
+      .project-card.wide { grid-column: span 12; min-height: 540px; }
+      .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 24px), var(--container)); }
+      .site-header { padding: 10px 0; }
+      .brand-name { font-size: .85rem; max-width: 205px; overflow: hidden; text-overflow: ellipsis; }
+      .hero { min-height: auto; padding: 112px 0 76px; }
+      .hero h1 { font-size: clamp(3.6rem, 19vw, 5.7rem); }
+      .hero-subtitle { font-size: 1.03rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .hero-visual { min-height: 430px; margin-top: 20px; }
+      .portrait-frame { width: min(88vw, 350px); border-radius: 44% 44% 22px 22px; }
+      .floating-label { left: 0; bottom: 18px; max-width: 180px; }
+      .scroll-cue { display: none; }
+      .about, .expertise, .projects { padding-block: 88px; }
+      .about-copy,
+      .credentials,
+      .modal-list { grid-template-columns: 1fr; }
+      .section-title { font-size: clamp(2.7rem, 14vw, 4.4rem); }
+      .projects-grid { gap: 14px; }
+      .project-card,
+      .project-card.wide { min-height: 500px; }
+      .project-content { padding: 22px; }
+      .project-summary { font-size: .92rem; }
+      .process { padding-bottom: 90px; }
+      .process-shell { border-radius: 28px; }
+      .tools { padding-bottom: 90px; }
+      .tools-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .tool-card { min-height: 145px; padding: 17px; }
+      .contact-shell { border-radius: 28px; }
+      .contact-shell::before { opacity: .35; }
+      .site-footer { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Maria Emília Del'Alamo Massocatto",
+    "jobTitle": "Analista de Marketing",
+    "url": "https://reidosachadinhos.github.io/mariaemiliamassocatto.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/maria-em%C3%ADlia-del-alamo-massocatto-634249220/"
+    ],
+    "knowsAbout": [
+      "Marketing Digital",
+      "Social Media",
+      "Branding",
+      "Conteúdo Audiovisual",
+      "Comunicação",
+      "Gestão de Projetos"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="topo">
+    <div class="container nav-shell">
+      <a class="brand-link" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-mark">ME</span>
+        <span class="brand-name">Maria Emília Massocatto</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a class="nav-cta" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="hero-kicker">
+            <span class="hero-kicker-dot" aria-hidden="true"></span>
+            Marketing • Conteúdo • Comunicação
+          </div>
+
+          <h1>
+            Ideias que viram <span class="accent">conexão.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Sou Maria Emília, Analista de Marketing. Uno estratégia, criatividade e comunicação para desenvolver campanhas, conteúdos e experiências que fortalecem marcas e aproximam pessoas.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/maria-em%C3%ADlia-del-alamo-massocatto-634249220/" target="_blank" rel="noopener noreferrer">Ver LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="hero-facts" aria-label="Resumo profissional">
+            <span class="fact-chip">+4 anos em Marketing</span>
+            <span class="fact-chip">MBA USP/Esalq</span>
+            <span class="fact-chip">Campinas • SP</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Retrato de Maria Emília">
+          <span class="orbit" aria-hidden="true"></span>
+          <span class="spark spark-one" aria-hidden="true">✦</span>
+          <span class="spark spark-two" aria-hidden="true">✦</span>
+
+          <div class="portrait-frame">
+            <img src="assets/img/maria-perfil.webp" alt="Maria Emília Del'Alamo Massocatto" width="900" height="900" fetchpriority="high" />
+          </div>
+
+          <div class="floating-label">
+            <strong>Estratégia com sensibilidade criativa.</strong>
+            <span>Do briefing à entrega final.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">Role para descobrir</div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Social Media</span><span>Branding</span><span>Conteúdo Audiovisual</span><span>Campanhas</span><span>Copywriting</span><span>Gestão de Projetos</span>
+        <span>Social Media</span><span>Branding</span><span>Conteúdo Audiovisual</span><span>Campanhas</span><span>Copywriting</span><span>Gestão de Projetos</span>
+      </div>
+    </div>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <aside class="about-sticky reveal">
+          <div class="about-card">
+            <img src="assets/img/maria-perfil.webp" alt="Foto profissional de Maria Emília" loading="lazy" />
+            <div class="about-card-meta">
+              <strong>Maria Emília</strong>
+              <span>Analista de Marketing</span>
+            </div>
+          </div>
+        </aside>
+
+        <div class="about-content reveal">
+          <span class="eyebrow">Sobre mim</span>
+          <h2>Engenharia no olhar. <em>Marketing</em> no coração.</h2>
+
+          <p class="about-lead">
+            Formada em Engenharia Agrícola pela Unicamp, encontrei no marketing o espaço onde estratégia, criatividade e comunicação se encontram.
+          </p>
+
+          <div class="about-copy">
+            <p>
+              Atualmente atuo no setor de máquinas para construção, participando do desenvolvimento de campanhas, gestão de redes sociais, produção de conteúdo e projetos que conectam marcas aos seus públicos.
+            </p>
+            <p>
+              Minha abordagem combina organização, repertório visual e visão de negócio para transformar desafios de comunicação em entregas claras, relevantes e bem executadas.
+            </p>
+          </div>
+
+          <div class="credentials">
+            <div class="credential">
+              <small>Formação</small>
+              <strong>Engenharia Agrícola — Unicamp</strong>
+            </div>
+            <div class="credential">
+              <small>Especialização</small>
+              <strong>MBA em Marketing — USP/Esalq</strong>
+            </div>
+            <div class="credential">
+              <small>Idiomas</small>
+              <strong>Inglês avançado • Espanhol básico</strong>
+            </div>
+            <div class="credential">
+              <small>Localização</small>
+              <strong>Campinas, São Paulo, Brasil</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise" id="atuacao">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Áreas de atuação</span>
+          <h2 class="section-title">Da estratégia ao conteúdo que ganha vida.</h2>
+          <p class="section-copy">
+            Uma atuação multidisciplinar que conecta planejamento, narrativa, design e análise para construir marcas mais consistentes.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+          <article class="expertise-card reveal">
+            <span class="expertise-number">01</span>
+            <span class="expertise-icon" aria-hidden="true">✦</span>
+            <h3>Estratégia & Campanhas</h3>
+            <p>Planejamento e execução de campanhas, branding e ações voltadas ao fortalecimento de marca e geração de resultados.</p>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">02</span>
+            <span class="expertise-icon" aria-hidden="true">◌</span>
+            <h3>Conteúdo & Audiovisual</h3>
+            <p>Criação de conteúdo, roteiros, gravações, cobertura de eventos, entrevistas e storytelling para diferentes canais.</p>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="expertise-number">03</span>
+            <span class="expertise-icon" aria-hidden="true">↗</span>
+            <h3>Marketing Digital & Comunicação</h3>
+            <p>Gestão de redes sociais, copywriting, comunicação institucional, relacionamento e análise de desempenho.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projetos">
+      <div class="container">
+        <div class="projects-head reveal">
+          <div>
+            <span class="eyebrow">Projetos selecionados</span>
+            <h2 class="section-title">Trabalhos que contam histórias.</h2>
+          </div>
+
+          <div class="project-filters" aria-label="Filtrar projetos">
+            <button class="filter-button active" type="button" data-filter="all">Todos</button>
+            <button class="filter-button" type="button" data-filter="social">Social Media</button>
+            <button class="filter-button" type="button" data-filter="video">Audiovisual</button>
+            <button class="filter-button" type="button" data-filter="design">Design</button>
+            <button class="filter-button" type="button" data-filter="web">Web</button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card wide reveal" data-category="video social">
+            <div class="project-media">
+              <img src="assets/img/destaque-construindo-caminhos.webp" alt="Projeto Construindo Caminhos" loading="lazy" />
+            </div>
+            <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Construindo Caminhos" data-project="construindo">↗</button>
+            <div class="project-content">
+              <span class="project-tag">Série audiovisual • CASE</span>
+              <h3>Construindo Caminhos</h3>
+              <p class="project-summary">Série criada para compartilhar histórias reais de clientes, destacando trajetórias, desafios e conquistas ao lado dos equipamentos.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="social design">
+            <div class="project-media">
+              <img src="assets/img/projeto-redes-sociais.webp" alt="Gestão das redes sociais da Brasif Máquinas" loading="lazy" />
+            </div>
+            <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Redes Sociais Brasif" data-project="brasif">↗</button>
+            <div class="project-content">
+              <span class="project-tag">Social Media</span>
+              <h3>Redes Sociais da Brasif Máquinas</h3>
+              <p class="project-summary">Planejamento, produção de conteúdo e acompanhamento da presença digital das marcas CASE, Hyster-Yale e FPT.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="video">
+            <div class="project-media">
+              <img src="assets/img/projeto-audiovisual.webp" alt="Projeto de gravação e edição de vídeos" loading="lazy" />
+            </div>
+            <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Audiovisual" data-project="audiovisual">↗</button>
+            <div class="project-content">
+              <span class="project-tag">Audiovisual</span>
+              <h3>Gravação & Edição de Vídeos</h3>
+              <p class="project-summary">Pautas, roteiros, gravações internas e externas, direção de entrevistas, captação e edição para redes sociais.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="design social">
+            <div class="project-media">
+              <img src="assets/img/projeto-design.webp" alt="Projetos de design e comunicação" loading="lazy" />
+            </div>
+            <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Design" data-project="design">↗</button>
+            <div class="project-content">
+              <span class="project-tag">Design & Comunicação</span>
+              <h3>Campanhas e Peças Visuais</h3>
+              <p class="project-summary">Artes para redes sociais, apresentações institucionais, materiais para eventos e identidades visuais.</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-media">
+              <img src="assets/img/projeto-website-phibro.webp" alt="Projeto do website Phibro LATAM" loading="lazy" />
+            </div>
+            <button class="project-open" type="button" aria-label="Abrir detalhes do projeto Website Phibro" data-project="phibro">↗</button>
+            <div class="project-content">
+              <span class="project-tag">Website • Gestão de projeto</span>
+              <h3>Website Phibro LATAM</h3>
+              <p class="project-summary">Gestão do projeto com a agência, estruturação do conteúdo, alinhamento técnico e revisão antes da publicação.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container process-shell reveal">
+        <div class="process-grid">
+          <div>
+            <span class="eyebrow">Como trabalho</span>
+            <h2>Clareza no processo. <em>Consistência</em> na entrega.</h2>
+          </div>
+
+          <div class="process-list">
+            <article class="process-item">
+              <div>
+                <h3>Imersão e entendimento</h3>
+                <p>Contexto, público, objetivo, canais, referências e indicadores que orientam o projeto.</p>
+              </div>
+            </article>
+            <article class="process-item">
+              <div>
+                <h3>Estratégia e planejamento</h3>
+                <p>Definição da narrativa, cronograma, formatos, responsabilidades e pontos de validação.</p>
+              </div>
+            </article>
+            <article class="process-item">
+              <div>
+                <h3>Criação e produção</h3>
+                <p>Desenvolvimento de conteúdo, materiais visuais, roteiros, gravações e alinhamentos.</p>
+              </div>
+            </article>
+            <article class="process-item">
+              <div>
+                <h3>Análise e evolução</h3>
+                <p>Acompanhamento de desempenho, aprendizados e ajustes para elevar a qualidade das próximas entregas.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools" id="ferramentas">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Ferramentas</span>
+          <h2 class="section-title">Criação com repertório e domínio técnico.</h2>
+        </div>
+
+        <div class="tools-grid">
+          <article class="tool-card reveal">
+            <span class="tool-icon">Ps</span>
+            <div><strong>Adobe Photoshop</strong><br /><span>Tratamento e composição visual</span></div>
+          </article>
+          <article class="tool-card reveal">
+            <span class="tool-icon">Ai</span>
+            <div><strong>Adobe Illustrator</strong><br /><span>Vetores e identidade visual</span></div>
+          </article>
+          <article class="tool-card reveal">
+            <span class="tool-icon">Pr</span>
+            <div><strong>Adobe Premiere</strong><br /><span>Edição de vídeo e narrativa</span></div>
+          </article>
+          <article class="tool-card reveal">
+            <span class="tool-icon">Cv</span>
+            <div><strong>Canva</strong><br /><span>Conteúdo ágil e multiplataforma</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-shell reveal">
+        <h2>Vamos criar algo <em>relevante</em> juntos?</h2>
+        <p class="contact-copy">Estou aberta a conversas sobre marketing, conteúdo, comunicação, projetos criativos e novas oportunidades profissionais.</p>
+
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:mariaemiliaa.massocatto@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="assets/docs/portfolio-maria-emilia.pdf" target="_blank" rel="noopener noreferrer">Abrir portfólio em PDF <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="contact-list">
+          <a class="contact-link" href="mailto:mariaemiliaa.massocatto@gmail.com">
+            <small>E-mail</small>
+            <strong>mariaemiliaa.massocatto@gmail.com</strong>
+          </a>
+          <a class="contact-link" href="https://wa.me/5516992373558" target="_blank" rel="noopener noreferrer">
+            <small>WhatsApp</small>
+            <strong>+55 16 99237-3558</strong>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/maria-em%C3%ADlia-del-alamo-massocatto-634249220/" target="_blank" rel="noopener noreferrer">
+            <small>LinkedIn</small>
+            <strong>Maria Emília Massocatto</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container site-footer">
+    <span>© <span id="current-year"></span> Maria Emília Del'Alamo Massocatto. Todos os direitos reservados.</span>
+    <button class="back-to-top" type="button">Voltar ao topo ↑</button>
+  </footer>
+
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <article class="modal-dialog">
+      <button class="modal-close" type="button" aria-label="Fechar detalhes">✕</button>
+      <img class="modal-image" src="" alt="" />
+      <div class="modal-body">
+        <span class="eyebrow modal-category"></span>
+        <h3 id="modal-title"></h3>
+        <p class="modal-description"></p>
+        <ul class="modal-list"></ul>
+        <a class="button button-primary modal-link" href="#contato">Conversar sobre este projeto <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    const header = document.querySelector('.site-header');
+    const progress = document.querySelector('.scroll-progress');
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    const navAnchors = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    const sections = [...document.querySelectorAll('main section[id]')];
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    function handleScroll() {
+      const scrollTop = window.scrollY;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = `${scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0}%`;
+      header.classList.toggle('scrolled', scrollTop > 30);
+
+      let current = '';
+      sections.forEach(section => {
+        if (scrollTop >= section.offsetTop - 180) current = section.id;
+      });
+      navAnchors.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.classList.toggle('open', isOpen);
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.addEventListener('click', event => {
+      if (event.target.matches('a')) {
+        navLinks.classList.remove('open');
+        menuButton.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -40px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Filtro de projetos
+    const filters = document.querySelectorAll('.filter-button');
+    const cards = document.querySelectorAll('.project-card');
+
+    filters.forEach(button => {
+      button.addEventListener('click', () => {
+        filters.forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+
+        cards.forEach(card => {
+          const categories = card.dataset.category.split(' ');
+          card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
+        });
+      });
+    });
+
+    // Dados dos cases. Edite aqui quando quiser acrescentar informações.
+    const projectData = {
+      construindo: {
+        category: 'Série audiovisual • CASE',
+        title: 'Construindo Caminhos',
+        image: 'assets/img/projeto-construindo-caminhos.webp',
+        description: 'Um dos principais projetos de vídeo do portfólio. A série compartilha histórias reais de clientes CASE, valorizando suas trajetórias, desafios e conquistas ao lado dos equipamentos.',
+        items: [
+          'Contato e relacionamento com clientes participantes',
+          'Elaboração de briefing e planejamento das gravações',
+          'Alinhamento com equipe interna e audiovisual',
+          'Acompanhamento das gravações em campo',
+          'Condução das entrevistas',
+          'Acompanhamento da edição e publicação'
+        ]
+      },
+      brasif: {
+        category: 'Social Media',
+        title: 'Gestão das Redes Sociais da Brasif Máquinas',
+        image: 'assets/img/projeto-redes-sociais.webp',
+        description: 'Planejamento e gestão dos conteúdos das redes sociais das marcas CASE, Hyster-Yale e FPT, com foco em estratégia, relacionamento e fortalecimento da presença digital.',
+        items: [
+          'Planejamento de cronograma editorial',
+          'Acompanhamento de métricas',
+          'Desenvolvimento de materiais estáticos',
+          'Produção e adaptação de vídeos',
+          'Apoio à comunicação das marcas representadas',
+          'Evolução contínua da presença digital'
+        ]
+      },
+      audiovisual: {
+        category: 'Conteúdo audiovisual',
+        title: 'Gravação e Edição de Vídeos',
+        image: 'assets/img/projeto-audiovisual.webp',
+        description: 'Planejamento, acompanhamento de gravações e produção de vídeos para Instagram, TikTok e YouTube, conectando conteúdo técnico a narrativas mais humanas e acessíveis.',
+        items: [
+          'Planejamento de pautas e roteiros',
+          'Organização de gravações internas e externas',
+          'Direção de entrevistas',
+          'Captação de conteúdos',
+          'Edição para redes sociais',
+          'Adaptação para múltiplos formatos'
+        ]
+      },
+      design: {
+        category: 'Design & Comunicação',
+        title: 'Campanhas e Peças Visuais',
+        image: 'assets/img/projeto-design.webp',
+        description: 'Desenvolvimento de peças para campanhas digitais e institucionais, conectando identidade visual, mensagem e adequação aos diferentes canais.',
+        items: [
+          'Artes para redes sociais',
+          'Apresentações institucionais',
+          'Materiais para eventos',
+          'Comunicação interna',
+          'Adaptação para diferentes formatos',
+          'Identidade visual de projetos e séries'
+        ]
+      },
+      phibro: {
+        category: 'Website • Gestão de projeto',
+        title: 'Website Integrado Phibro LATAM',
+        image: 'assets/img/projeto-website-phibro.webp',
+        description: 'Gestão do desenvolvimento do website da Phibro para países da América Latina, garantindo alinhamento entre conteúdo, estrutura, comunicação e experiência do usuário.',
+        items: [
+          'Liderança do projeto com a agência',
+          'Planejamento da estrutura do site',
+          'Desenvolvimento e revisão de conteúdos',
+          'Alinhamento técnico entre equipes',
+          'Acompanhamento do desenvolvimento',
+          'Revisão final antes da publicação'
+        ]
+      }
+    };
+
+    const modal = document.querySelector('.modal');
+    const modalImage = modal.querySelector('.modal-image');
+    const modalCategory = modal.querySelector('.modal-category');
+    const modalTitle = modal.querySelector('#modal-title');
+    const modalDescription = modal.querySelector('.modal-description');
+    const modalList = modal.querySelector('.modal-list');
+    const modalClose = modal.querySelector('.modal-close');
+    let lastFocusedElement = null;
+
+    function openModal(projectKey) {
+      const project = projectData[projectKey];
+      if (!project) return;
+      lastFocusedElement = document.activeElement;
+      modalImage.src = project.image;
+      modalImage.alt = project.title;
+      modalCategory.textContent = project.category;
+      modalTitle.textContent = project.title;
+      modalDescription.textContent = project.description;
+      modalList.innerHTML = project.items.map(item => `<li>${item}</li>`).join('');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    document.querySelectorAll('.project-open').forEach(button => {
+      button.addEventListener('click', () => openModal(button.dataset.project));
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', event => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    modal.querySelector('.modal-link').addEventListener('click', closeModal);
+
+    document.querySelector('.back-to-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Efeito sutil de profundidade nos cards em dispositivos com mouse.
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', event => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - .5;
+          const y = (event.clientY - rect.top) / rect.height - .5;
+          card.style.transform = `perspective(900px) rotateX(${y * -2.5}deg) rotateY(${x * 2.5}deg) translateY(-2px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
